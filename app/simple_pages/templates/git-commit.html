@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">Git Commit</h1></center>
+
+  </div>
+
+  <div class="container px-4 py-5" id="featured-3">
+
+  <h2> How it works
+</h2>
+      <p>At a high-level, Git can be thought of as a timeline management utility. Commits are the core building block units of a Git project timeline. Commits can be thought of as snapshots or milestones along the timeline of a Git project. Commits are created with the <code>git commit</code> command to capture the state of a project at that point in time. Git Snapshots are always committed to the local repository. This is fundamentally different from SVN, wherein the working copy is committed to the central repository. In contrast, Git doesn’t force you to interact with the central repository until you’re ready. Just as the staging area is a buffer between the working directory and the project history, each developer’s local repository is a buffer between their contributions and the central repository.</p>
+      <p>This changes the basic development model for Git users. Instead of making a change and committing it directly to the central repo, Git developers have the opportunity to accumulate commits in their local repo. This has many advantages over SVN-style collaboration: it makes it easier to split up a feature into atomic commits, keep related commits grouped together, and clean up local history before publishing it to the central repository. It also lets developers work in an isolated environment, deferring integration until they’re at a convenient point to merge with other users. While isolation and deferred integration are individually beneficial, it is in a team's best interest to integrate frequently and in small units. For more information regarding best practices for Git team collaboration read how teams structure their <a href="/git/tutorials/comparing-workflows" data-event="clicked" data-uuid="c1eab9eb-04" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket">Git workflow</a>.</p>
+      <center><div class="component component--codeblock">
+<pre><code class="hljs nginx"><span class="hljs-attribute">git</span>&nbsp;commit&nbsp;-m&nbsp;<span class="hljs-string">"commit&nbsp;message"</span></code></pre>
+</div></center>
+<p>A shortcut command that immediately creates a commit with a passed commit message. By default, <code>git commit</code> will open up the locally configured text editor, and prompt for a commit message to be entered. Passing the <code>-m</code> option will forgo the text editor prompt in-favor of an inline message.</p>
+
+
+      <h2> Examples
+</h2>
+      <h3> Saving changes with a commit
+</h3>
+      <div class="component component--codeblock">
+<pre><code class="hljs dockerfile">git&nbsp;<span class="hljs-keyword">add</span><span class="bash">&nbsp;hello.py</span></code></pre>
+</div>
+      <p>This command will add <code>hello.py</code> to the Git staging area. We can examine the result of this action by using the <code>git status</code> command.</p>
+
+      <div class="component component--codeblock">
+<pre><code class="hljs vim">git&nbsp;status<br>On&nbsp;branch&nbsp;main<br>Changes&nbsp;<span class="hljs-keyword">to</span>&nbsp;<span class="hljs-keyword">be</span>&nbsp;committed:<br>&nbsp;&nbsp;(use&nbsp;<span class="hljs-string">"git&nbsp;reset&nbsp;HEAD&nbsp;&lt;file&gt;..."</span>&nbsp;<span class="hljs-keyword">to</span>&nbsp;unstage)<br>&nbsp;&nbsp;&nbsp;<span class="hljs-keyword">new</span>&nbsp;<span class="hljs-keyword">file</span>:&nbsp;hello.<span class="hljs-keyword">py</span></code></pre>
+</div>
+      <p>The green output new file: <code>hello.py</code> indicates that <code>hello.py</code> will be saved with the next commit. From the commit is created by executing:</p>
+
+      <div class="component component--codeblock">
+<pre><code class="hljs ebnf"><span class="hljs-attribute">git&nbsp;commit</span></code></pre>
+</div>
+
+
+      <h2> How to update (amend) a commit
+</h2>
+
+
+      <div class="component component--codeblock">
+<pre><code class="hljs dockerfile">git&nbsp;<span class="hljs-keyword">add</span><span class="bash">&nbsp;hello.py</span><br><span class="bash">git&nbsp;commit&nbsp;--amend</span></code></pre>
+</div>
+
+      <p>This will once again, open up the configured text editor. This time, however, it will be pre-filled with the commit message we previously entered. This indicates that we are not creating a new commit, but editing the last.</p>
+    <h6>Resource: Atlassian</h6>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">Git Repository</h1></center>
+
+    <h2> What is a Git repository?
+</h2>
+    <p>A <a href="https://bitbucket.org/product/code-repository" data-event="clicked" data-uuid="92a86705-d9" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket">Git repository</a> is a virtual storage of your project. It allows you to save versions of your code, which you can access when needed.&nbsp;</p>
+
+
+    <h2> Initializing a new repository: git init
+</h2>
+    <p>To create a new repo, you'll use the <code>git init</code> command. <code>git init</code> is a one-time command you use during the initial setup of a new repo. Executing this command will create a new <code>.git</code> subdirectory in your current working directory. This will also create a new main&nbsp;branch.&nbsp;</p>
+
+    <div class="component component--codeblock">
+<pre><code class="hljs xml">git&nbsp;init&nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">project</span>&nbsp;<span class="hljs-attr">directory</span>&gt;</span></code></pre>
+</div>
+
+
+    <h2> Cloning an existing repository: git clone
+</h2>
+
+
+    <div class="component component--codeblock">
+<pre><code class="hljs crmsh">git&nbsp;<span class="hljs-keyword">clone</span>&nbsp;<span class="hljs-title">&lt;repo</span>&nbsp;url&gt;</code></pre>
+</div>
+
+    <p><code>git clone</code> is used to create a copy or clone of remote repositories. You pass <code>git clone</code> a repository URL. Git supports a few different network protocols and corresponding URL formats. In this example, we'll be using the Git SSH protocol. Git SSH URLs follow a template of: <code>git@HOSTNAME:USERNAME/REPONAME.git</code></p>
+
+        <h6>Resource: Atlassian</h6>
+</div>
+
+{% endblock %}
