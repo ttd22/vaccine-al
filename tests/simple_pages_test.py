@@ -13,6 +13,7 @@ def test_request_index(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
+    assert b"Index" in response.data
 
 def test_request_git(client):
     """This makes the index page"""
@@ -28,7 +29,7 @@ def test_request_docker(client):
 
 def test_request_pythonflask(client):
     """This makes the index page"""
-    response = client.get("/python-flask")
+    response = client.get("/pythonflask")
     assert response.status_code == 200
     assert b"Python-Flask" in response.data
 
