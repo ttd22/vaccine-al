@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">Git Branch</h1></center>
+
+  </div>
+
+  <div class="container px-4 py-5" id="featured-3">
+
+    <h2 id="how-it-works"> How it works</h2>
+    <p>A branch represents an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. You can think of them as a way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project.</p>
+    <p>The <code>git branch</code> command lets you create, list, rename, and delete branches. It doesn’t let you switch between branches or put a forked history back together again. For this reason, <code>git branch</code> is tightly integrated with the <code><a href="/git/tutorials/using-branches/git-checkout" data-event="clicked" data-uuid="552ca8af-a0" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket">git checkout</a></code> and <code><a href="/git/tutorials/using-branches/git-merge" data-event="clicked" data-uuid="552ca8af-a0" data-event-component="linkButton" data-event-container="richText" data-schema-version="1" data-product-key="bitbucket">git merge</a></code> commands.</p>
+
+
+
+    <h2> Creating Branches</h2>
+    <p>It's important to understand that branches are just pointers to commits. When you create a branch, all Git needs to do is create a new pointer, it doesn’t change the repository in any other way. If you start with a repository that looks like this:</p>
+    <img src="https://wac-cdn.atlassian.com/dam/jcr:547aa16b-4bdd-45bc-9fbc-18e795dd9df1/02%20Creating%20branches.svg?cdnVersion=245" loading="lazy" alt="Git Tutorial: repository without any branches">
+    <p>Then, you create a branch using the following command:</p>
+    <center><pre><code class="hljs armasm"><span class="hljs-symbol">git</span> <span class="hljs-keyword">branch </span>crazy-experiment</code></pre></center>
+    <img src="https://wac-cdn.atlassian.com/dam/jcr:387f080e-19b8-43ab-a7a3-0921ffd7298a/03%20Creating%20branches.svg?cdnVersion=245" loading="lazy" alt="Git Tutorial: Create new branch">
+    <p>Note that this only <em>creates</em> the new branch. To start adding commits to it, you need to select it with <code>git checkout</code>, and then use the standard <code>git add</code> and <code>git commit</code> commands.&nbsp;</p>
+
+
+
+    <h2> Creating remote branches</h2>
+    <div class="component component--codeblock">
+        <pre><code class="hljs vim">$&nbsp;git&nbsp;remote&nbsp;<span class="hljs-built_in">add</span>&nbsp;<span class="hljs-keyword">new</span>-remote-repo&nbsp;http<span class="hljs-variable">s:</span>//bitbucket.<span class="hljs-keyword">com</span>/user/repo.git<br>#&nbsp;Add&nbsp;remote&nbsp;repo&nbsp;<span class="hljs-keyword">to</span>&nbsp;local&nbsp;repo&nbsp;config<br>$&nbsp;git&nbsp;push&nbsp;<span class="hljs-symbol">&lt;new-remote-repo&gt;</span>&nbsp;crazy-experiment~<br>#&nbsp;pushes&nbsp;the&nbsp;crazy-experiment&nbsp;branch&nbsp;<span class="hljs-keyword">to</span>&nbsp;<span class="hljs-keyword">new</span>-remote-repo</code></pre>
+        </div>
+        <p>This command will push a copy of the local branch <code>crazy-experiment</code> to the remote repo <code>＜remote＞.</code></p>
+
+
+
+
+
+  <h2> Deleting Branches
+</h2>
+<p>Once you’ve finished working on a branch and have merged it into the main code base, you’re free to delete the branch without losing any history:</p>
+<pre><code class="hljs armasm"><span class="hljs-symbol">git</span> <span class="hljs-keyword">branch </span>-D crazy-experiment</code></pre>
+<p>This deletes the branch regardless of its status and without warnings, so use it judiciously.</p>
+<p>The previous commands will delete a local copy of a branch. The branch may still exist in remote repos. To delete a remote branch execute the following.</p>
+<center><div class="component component--codeblock">
+    <pre><code class="hljs maxima">git&nbsp;<span class="hljs-built_in">push</span>&nbsp;<span class="hljs-built_in">origin</span>&nbsp;--<span class="hljs-built_in">delete</span>&nbsp;crazy-experiment</code></pre>
+    </div></center>
+
+
+    <h6>Resource: Atlassian</h6>
+  </div>
+
+
+{% endblock %}

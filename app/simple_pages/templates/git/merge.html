@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">Git Merge</h1></center>
+    <h2> How it works
+    </h2>
+    <p><code>Git merge</code> will combine multiple sequences of commits into one unified history.&nbsp;In the most frequent use cases, <code>git merge</code> is used to combine two branches. The&nbsp;following examples in this document will focus on this branch merging pattern.&nbsp;In these scenarios, <code>git merge</code> takes two commit pointers, usually the branch&nbsp;tips, and will find a common base commit between them. Once Git finds a common&nbsp;base commit it will create a new "merge commit" that combines the changes of&nbsp;each queued merge commit sequence.</p>
+
+
+    <h2> Preparing to merge
+    </h2>
+    <p>Before performing a merge there are a couple of preparation steps to take to&nbsp;ensure the merge goes smoothly.</p>
+
+    <h2> Confirm the receiving branch
+    </h2>
+    <p>Execute <code>git status&nbsp;</code>to ensure that <code>HEAD</code> is pointing to the correct merge-receiving branch. If needed, execute <code>git checkout <receiving></receiving></code> to switch to the&nbsp;receiving branch. In our case we will execute <code>git checkout main.</code></p>
+
+    <h2> Fetch latest remote commits
+    </h2>
+    <p>Make sure the receiving branch and the merging branch are up-to-date with the&nbsp;latest remote changes. Execute <code>git fetch</code> to pull the latest remote commits. Once&nbsp;the fetch is completed ensure the <code>main</code>&nbsp;branch has the latest updates by&nbsp;executing <code>git pull.</code></p>
+    <h2> Merging
+    </h2>
+    <p>Once the previously discussed "preparing to merge" steps have been taken a merge&nbsp;can be initiated by executing <code>git merge <branch name=""></branch></code>&nbsp;where <code><branch name=""></branch></code> is the&nbsp;name of the branch that will be merged into the receiving branch.</p>
+
+
+    <h2> 3-way merge
+    </h2>
+    <div class="component component--codeblock">
+        <pre><code class="hljs sql"><span class="hljs-keyword">Start</span>&nbsp;a&nbsp;<span class="hljs-keyword">new</span>&nbsp;feature<br>git&nbsp;checkout&nbsp;-b&nbsp;<span class="hljs-keyword">new</span>-feature&nbsp;<span class="hljs-keyword">main</span><br>#&nbsp;Edit&nbsp;<span class="hljs-keyword">some</span>&nbsp;files<br>git&nbsp;<span class="hljs-keyword">add</span>&nbsp;&lt;<span class="hljs-keyword">file</span>&gt;<br>git&nbsp;<span class="hljs-keyword">commit</span>&nbsp;-m&nbsp;<span class="hljs-string">"Start&nbsp;a&nbsp;feature"</span><br>#&nbsp;Edit&nbsp;<span class="hljs-keyword">some</span>&nbsp;files<br>git&nbsp;<span class="hljs-keyword">add</span>&nbsp;&lt;<span class="hljs-keyword">file</span>&gt;<br>git&nbsp;<span class="hljs-keyword">commit</span>&nbsp;-m&nbsp;<span class="hljs-string">"Finish&nbsp;a&nbsp;feature"</span><br>#&nbsp;Develop&nbsp;the&nbsp;<span class="hljs-keyword">main</span>&nbsp;branch<br>git&nbsp;checkout&nbsp;<span class="hljs-keyword">main</span><br>#&nbsp;Edit&nbsp;<span class="hljs-keyword">some</span>&nbsp;files<br>git&nbsp;<span class="hljs-keyword">add</span>&nbsp;&lt;<span class="hljs-keyword">file</span>&gt;<br>git&nbsp;<span class="hljs-keyword">commit</span>&nbsp;-m&nbsp;<span class="hljs-string">"Make&nbsp;some&nbsp;super-stable&nbsp;changes&nbsp;to&nbsp;main"</span><br>#&nbsp;<span class="hljs-keyword">Merge</span>&nbsp;<span class="hljs-keyword">in</span>&nbsp;the&nbsp;<span class="hljs-keyword">new</span>-feature&nbsp;branch<br>git&nbsp;<span class="hljs-keyword">merge</span>&nbsp;<span class="hljs-keyword">new</span>-feature<br>git&nbsp;branch&nbsp;-d&nbsp;<span class="hljs-keyword">new</span>-feature</code></pre>
+        </div>
+
+        <h6>Resource: Atlassian</h6>
+</div>
+
+{% endblock %}
