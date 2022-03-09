@@ -1,80 +1,142 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container px-4 py-4" id="featured-3">
+    <div class="container px-4 py-4" id="featured-3">
     <center><h1 class="pb-2 border-bottom">Docker</h1></center>
 
   </div>
 
   <div class="container px-4 py-5" id="featured-3">
 
-      <div class="row g-0">
-        <div class="col-md-8">
-            <div class="card mb-3" style="max-width: 700px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="../../static/images/git-branches.png" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <h2> What is Docker?</h2>
+      <p>Docker is a platform which packages an application and all its dependencies together in the form of containers. This containerization aspect ensures that the application works in any environment.</p>
+    <center><img src="../../static/images/docker-what-is-docker.png" loading="lazy" alt="What is Docker?"></center><p></p>
 
-                        <a href="{{ url_for('simple_pages.show', page="branch")}}" class="stretched-link"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<p>As you can see in the diagram, each and every application runs on separate containers and has its own set of dependencies & libraries. This makes sure that each application is independent of other applications, giving developers surety that they can build applications that will not interfere with one another.</p>
+      <p>So a developer can build a container having different applications installed on it and give it to the QA team. Then the QA team would only need to run the container to replicate the developer’s environment.</p>
 
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-4 "></div>
-                        <div class="col-md-8 ">
-                            <img src="../../static/images/git-branches.png" class="img-fluid rounded-start" alt="...">
-                          </div>
-                  </div>
-              </div>
+    <center><img src="../../static/images/docker-image-container.png" loading="lazy" alt="Docker image and container?"></center>
+<p></p>
+      <h2>Dockerfile</h2>
+      <p style="text-align: justify;">A Dockerfile is a text document which contains all the commands that a user can call on the command line to assemble an image. So,&nbsp;Docker can build images automatically by reading the instructions from a Dockerfile. You can use <code class="highlighter-rouge">docker build</code>&nbsp;to create an automated build to&nbsp;execute several command-line instructions in succession.</p>
+    <h2> Docker Image</h2>
+      <p style="text-align: justify;">In layman terms, Docker Image can be compared to a template which is used to create Docker Containers. So, these read-only templates are the building blocks of a Container. You can use <code class="highlighter-rouge">docker run</code> to run the image and create a container.</p>
+<p style="text-align: justify;"><span>Docker Images are stored in the Docker Registry. It can be either a user’s local repository or a public repository like a Docker Hub which allows multiple users to collaborate in building an application.</span></p>
+      <h2>Docker Container</h2>
+      <p style="text-align: justify;">It is a running instance of a Docker Image as they hold the entire package needed to run the application. So, these are basically the <span>ready applications created from Docker Images which is the ultimate&nbsp;utility of Docker.&nbsp;</span></p>
 
+      <h2>Docker Repository</h2>
 
+      <a href="https://hub.docker.com/r/ttd22/project1">My project repository on docker hub</a>
+<p></p>
+      <h2>Docker Commands</h2>
+<ol>
+    <li>
+            <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">--version </span></code></pre>
+      <p>This command is used to get the currently installed version of docker</p>
 
+</li>
+       <li>
+      <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">pull </span>image-name</code></pre>
+      <p>This command is used to pull images from the docker repository(hub.docker.com)</p>
 
-                 <div class="col-md-8">
-            <div class="card mb-3" style="max-width: 700px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="../../static/images/git-branches.png" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <a href="{{ url_for('simple_pages.show', page="merge")}}" class="stretched-link"></a>
+</li>
+   <li>
+            <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">run </span><span class="hljs-keyword">-it </span><span class="hljs-keyword">-d </span>image-name</code></pre>
+      <p>This command is used to create a container from an image</p>
+    </li>
+   <li>
 
+      <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">ps </span></code></pre>
+      <p>This command is used to list the running containers</p>
+    </li>
+   <li>
+      <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">ps </span> -a</code></pre>
+      <p>This command is used to show all the running and exited containers</p>
+    </li>
+   <li>
+            <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">exec </span><span class="hljs-keyword">-it </span><span class="hljs-keyword">container-id </span>bash</code></pre>
+      <p>This command is used to access the running container</p>
+    </li>
+   <li>
 
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">stop </span>container-id</code></pre>
+      <p>This command stops a running container</p>
+    </li>
+   <li>
 
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-4 "></div>
-                        <div class="col-md-8 ">
-                            <img src="../../static/images/git-branches.png" class="img-fluid rounded-start" alt="...">
-                          </div>
-                  </div>
-              </div>
+                  <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">kill </span>container-id</code></pre>
 
-
-
-          </div>
-
-
+      <p>This command kills the container by stopping its execution immediately. The difference between ‘docker kill’ and ‘docker stop’ is that ‘docker stop’ gives the container time to shutdown gracefully, in situations when it is taking too much time for getting the container to stop, one can opt to kill it</p>
+    </li>
+   <li>
 
 
+            <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">commit </span><span class="hljs-keyword">container-id </span><span class="hljs-keyword">username/image-name </span></code></pre>
+
+      <p>This command creates a new image of an edited container on the local system</p>
+    </li>
+   <li>
+        <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">push </span>username/image-name </code></pre>
+      <p>This command is used to push an image to the docker hub repository</p>
+    </li>
+   <li>
+          <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">images </span></code></pre>
+      <p>This command lists all the locally stored docker images</p>
+    </li>
+   <li>
+         <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">rm </span>container-id</code></pre>
+      <p>This command is used to delete a stopped container</p>
+    </li>
+   <li>
+           <pre><code class="hljs armasm"><span class="hljs-symbol">docker</span> <span class="hljs-keyword">build </span>path-to-docker-file</code></pre>
+      <p>This command is used to build an image from a specified docker file</p>
+    </li>
+</ol>
+  <h2>Create a project and access the container via Terminal</h2>
+  <h4>Get the app</h4>
+  <p>Dowload the project from GitHub by pulling the entire project or downloading it as a zip and extract the app folder out to get started with.</p>
+  <h4>Build the app’s container image</h4>
+    <p>Create a file named <code class="highlighter-rouge">Dockerfile</code> in the same folder as the file <code class="highlighter-rouge">package.json</code> with the following contents.</p>
+
+    <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># syntax=docker/dockerfile:1</span>
+<span class="k" data-original-title="" title="">FROM</span><span class="s"> node:12-alpine</span>
+<span class="k" data-original-title="" title="">RUN </span>apk add <span class="nt">--no-cache</span> python2 g++ make
+<span class="k" data-original-title="" title="">WORKDIR</span><span class="s"> /app</span>
+<span class="k" data-original-title="" title="">COPY</span><span class="s"> . .</span>
+<span class="k" data-original-title="" title="">RUN </span>yarn install <span class="nt">--production</span>
+<span class="k" data-original-title="" title="">CMD</span><span class="s"> ["node", "src/index.js"]</span>
+<span class="k" data-original-title="" title="">EXPOSE</span><span class="s"> 3000</span>
+</code></pre></div>    </div>
+
+
+
+
+    <p>If you haven’t already done so, open a terminal and go to the <code class="highlighter-rouge">app</code> directory with the <code class="highlighter-rouge">Dockerfile</code>. Now build the container image using the <code class="highlighter-rouge">docker build</code> command.</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> docker build <span class="nt">-t</span> getting-started <span class="nb">.</span>
+</code></pre></div>    </div>
+
+      <p>This command used the Dockerfile to build a new container image</p>
+
+
+
+  <h4>Start an app container</h4>
+  <ol>
+  <li>
+    <p>Start your container using the <code class="highlighter-rouge">docker run</code> command and specify the name of the image we
+just created:</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> docker run <span class="nt">-dp</span> 3000:3000 getting-started
+</code></pre></div>    </div>
+
+  </li>
+  <li>
+    <p>After a few seconds, open your web browser to <a href="http://localhost:3000">http://localhost:3000</a>.
+You should see our app.</p>
+
+  </li>
+</ol>
   </div>
 
 
-
-{% endblock content %}
+{% endblock %}
