@@ -1,4 +1,94 @@
 {% extends "base.html" %}
 {% block content %}
-    Python-Flask
+    <div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">Python Flask</h1></center>
+
+  </div>
+
+  <div class="container px-4 py-5" id="featured-3">
+<h2 >Pytest</h2>
+      <p><code class="highlighter-rouge">pytest</code> is a mature full-featured Python testing tool that helps you write better programs</p>
+      <h4>How to use pytest?</h4>
+      <ol>
+          <li>
+              <p>Install pytest:</p>
+              <pre><code class="hljs armasm"><span class="hljs-symbol">pip</span> <span class="hljs-keyword">install </span>pytest</code></pre>
+          </li>
+          <li>
+              <p>Create a testing py. Here is an example from my code</p>
+                  <center><img src="../../static/images/pagetest.jpg" loading="lazy" alt="page test"></center>
+          </li>
+
+          <li>
+              <p>Run pytest and it will let you know your test is whether pass or fail</p>
+                  <center><img src="../../static/images/pytest.jpg" loading="lazy" alt="pytest"></center>
+          </li>
+      </ol>
+
+  <h2>Simple pages creation and testing</h2>
+  <h4>Creating pages</h4>
+      <ol>
+          <li>
+              <p>Create and configure an instance of the Flask application inside __init__.py</p>
+          </li>
+          <li>
+              <p>Run Flask app by calling app = create_app() in run.py</p>
+          </li>
+          <li>
+              <p>Create a base template file inside folder templates, which other HTML files will inherit from</p>
+          </li>
+      </ol>
+  <h4>Testing pages</h4>
+  <ol>
+      <li>
+          Identify tests folder and create tests for pages inside it
+      </li>
+      <li>Sending Requests with the Test Client by creating a test function and take "client" as its parameter</li>
+      <li>Check whether the page is working by asserting response.status_code == 200</li>
+      <li>You could create other assertions</li>
+      <li>response.status_code == 404 means the page does not exist </li>
+  </ol>
+  <h2>Links</h2>
+  <ol>
+      <li>
+                <a href="https://github.com/ttd22/project1">My project on GitHub</a>
+
+      </li>
+      <li>
+          <a href="https://flask.palletsprojects.com/en/2.0.x/testing/">Modular Applications with Blueprints</a>
+      </li>
+      <li>
+          <a href="https://flask.palletsprojects.com/en/2.0.x/blueprints/">Testing Flask Applications</a>
+      </li>
+  </ol>
+
+  <h2>Project Outline</h2>
+  <ul>
+                <li>docker_flask &lt;-- Project Root</li>
+                <ul>
+                    <li>.github &lt;-- Folder is for GitHub</li>
+                    <ul>
+                        <li>workflows &lt;-- GitHub Actions runs .yml files</li>
+                    </ul>
+                    <li>app &lt;-- Flask app root</li>
+                    <ul>
+                        <li>simple_pages &lt;-- Folder includes html pages</li>
+                        <li>static &lt;-- Folder for css, images and js folders that include static files. Static files are files that clients download as they are from the server.</li>
+                        <li>templates &lt;-- Folder for a base template file, which other HTML files will inherit from</li>
+                        <li>__init__.py &lt;-- Where Flask app is created and configured</li>
+                        <li>run.py &lt;-- Allows Gunicorn to serve the app in production</li>
+                    </ul>
+                    <li>tests &lt;-- Folder for page tests or other tests</li>
+                    <ul>
+                        <li>simple_pages_tests.py &lt;-- A file that do test for project pages created</li>
+                    </ul>
+                    <li>docker-compose.yml &lt;-- Orchestration file that contains the configuration to develop locally, it overrides the Dockerfile to run the flask development server instead of running the gunicorn server that is used for hosting on Heroku</li>
+                    <li>Dockerfile &lt;-- File used to create an image to run in a container that runs the program</li>
+                    <li>requirements.txt &lt;-- A plain text file that lists down the python package requirements</li>
+                    <li>readme.md &lt;--  a guide that gives visitors a detailed description of my project</li>
+            </ul>
+  </ul>
+  </div>
+
+
 {% endblock %}
