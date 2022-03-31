@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+    <div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">Pylint & Others</h1></center>
 
-</body>
-</html>
+    <h2>Pylint</h2>
+    <ul>
+        <li>Pylint is a tool that checks for errors in Python code, tries to enforce a coding standard and looks for code smells. It can also look for certain type errors, it can recommend suggestions about how particular blocks can be refactored and can offer you details about the code's complexity.</li>
+        <li>Installation: <pre>pip install pylint </pre></li>
+        <li>Verify the pylint installation: <pre>pylint --version</pre></li>
+    </ul>
+
+    <h2 class="pb-2 border-top">Others</h2>
+    <ul>
+        <li>
+            <b>Pytest Fixtures</b> are functions attached to the tests which run before the test function is executed. Fixtures are a set of resources that have to be set up before and cleaned up once the Selenium test automation execution is completed. We can tell pytest that a particular function is a fixture by decorating it with @pytest.fixture.
+        </li>
+        <br><center><img src="../../static/images/ex-fixture.jpg" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+        <li><b>Type hints</b> is a feature of Python that allows you to explicitly declare the data type of a variable when declaring it. They are only available in Python 3.5 and later.
+
+            Type hints provide two benefits. First, they help people reading your code to know what types of data to expect. Second, they can be used by the Python interpreter to check your code for errors at runtime, saving you from some frustrating bugs. </li>
+            <ul>
+                <li><pre>name = "trang"</pre></li>
+                <li><pre>course = "is218"</pre></li>
+                <li>Python is considered a dynamically typed language, meaning that the types of variables need not be declared before use. This means that it is easier to code, but also means it is harder to catch errors in complex programs.
+                    Example of  dynamic declaration of a variable in python.</li>
+            </ul>
+            <li><b>Type Casting</b> is the method to convert the variable data type into a certain data type in order to the operation required to be performed by users. In this article, we will see the various technique for typecasting. This example is casting list to tuple</li>
+            <br><center><img src="../../static/images/ex-casting.jpg" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+
+        <li>
+            <b>Unittest</b> is the first level of software testing where the smallest testable parts of a software are tested. This is used to validate that each unit of the software performs as designed.
+        </li>
+    </ul>
+    <a href="https://www.pythonstacks.com/blog/post/type-hints-python/">Resource</a>
+
+</div>
+
+
+{% endblock %}

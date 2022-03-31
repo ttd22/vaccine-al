@@ -1,10 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+    <div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">Object-oriented Programming (OOP)</h1></center>
 
-</body>
-</html>
+    <h2>Definition</h2>
+    <ul>
+        <li><b>Instantiation</b> - is the realization of a predefined object.</li>
+        <li>
+            <b>Class</b> - are essentially user defined data types. Classes are where we create a blueprint for the structure of methods and attributes. Individual objects are instantiated, or created from this blueprint.
+        </li>
+        <li><b>Objects</b> - are instances of classes created with specific data</li>
+        <li><b>Attributes</b> - are the information that is stored. Attributes are defined in the Class template. When objects are instantiated individual objects contain data stored in the Attributes field.</li>
+        <li><b>Methods</b> - represent behaviors. Methods perform actions; methods might return information about an object, or update an object’s data. The method’s code is defined in the class definition.</li>
+        <ul>
+            <li><b>Static methods</b> - is bound to the class and not the object of the class. It can't access or modify class state. It is present in a class because it makes sense for the method to be present in class. A static method does not receive an implicit first argument.</li>
+        </ul>
+        <li><b>Namespace</b> - is a system that has a unique name for each and every object in Python</li>
+        <li><b>Constructor</b> - is a special method used to create and initialize an object of a class.</li>
+        <li><b>Instance properties</b> - are those properties that are defined inside any class and require an instance that is created with the help of the class name.</li>
+        <li ><b>Static properties </b>are shared among all instances of a class.</li>
+    </ul>
+    <h2 class="pb-2 border-top" >Four Principles</h2>
+    <center><img src="../../static/images/oop-principles.jpg" loading="lazy" alt="principles" width="600px"></center>
+    <ol>
+        <h3><li>Inheritance</li></h3>
+        <em>Child classes inherit data and behaviors from parent class</em>
+        <ul>
+            <li>Inheritance allows classes to inherit features of other classes. Parent classes extend attributes and behaviors to child classes. <b>Inheritance supports reusability</b>. If basic attributes and behaviors are defined in a parent class, child classes can be created extending the functionality of the parent class, and adding additional attributes and behaviors.</li>
+        </li> <br>
+        <center><img src="../../static/images/ex-inheritance-1.jpg" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+        <center><img src="../../static/images/ex-inheritance.jpg" loading="lazy" alt="inheritance" width="600px"></center><br>
+        <li>
+            <u>Explain code example</u>: A child class Addition is inherited from the parent class Calculation and has a unique get the addition results method. Addition class automatically gains access to functionalities within Calculation class and adds an additional method get_result().
+
+        </li>
+        </ul>
+        <br>
+
+        <h3><li>Encapsulation</li></h3>
+        <em>Containing information in an object, exposing only selected information</em>
+        <ul>
+            <li>Encapsulation means containing all important information inside an object, and only exposing selected information to the outside world. Attributes and behaviors are defined by code inside the class template. when an object is instantiated from the class, the data and methods are encapsulated in that object. Encapsulation hides the internal software code implementation inside a class, and hides internal data of inside objects.</li>
+            <li>Encapsulation adds <b>security</b>. Attributes and methods can be set to private, so they can’t be accessed outside the class. To get information about data in an object, public methods & properties are used to access or update data.</li>
+            <br><center><img src="../../static/images/ex-encapsulation.jpg" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+            <li>
+                <u>Explain code example</u>: It wraps data and the methods that work on data within one unit. __init__ allows data hinding using Encapsulation.
+            </li>
+        </ul>
+
+        <h3><li>Abstraction</li></h3>
+        <em>Only exposing high level public methods for accessing an object</em>
+        <ul><li>Abstraction is used to hide the internal functionality of the function from the users. The users only interact with the basic implementation of the function, but inner working is hidden. User is familiar with that "what function does" but they don't know "how it does."</li>
+            <li>Abstraction also serves an important security role. By only displaying selected pieces of data, and only allowing data to be accessed through classes and modified through methods, we protect the data from exposure.</li>
+            <br><center><img src="../../static/images/ex-encapsulation.jpg" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+            <li> <u>Explain code example</u>: Abstraction hides all the implementation of calculation class away from anything outside of the class.</li>
+        </ul>
+
+
+        <h3><li>Polymorphism</li></h3>
+        <em>Many methods can do the same task</em>
+        <ul>
+            <li>Polymorphism means designing objects to share behaviors. Using inheritance, objects can override shared parent behaviors, with specific child behaviors. </li>
+            <br><center><img src="../../static/images/ex-polymorphism.jpg" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+            <li> <u>Explain code example</u>: Child classes Addition and Multiplication shared the same method get_results(), but the Addition return the sum of numbers, while the Multiplication return the product of numbers. This example is Polymorphism with Inheritance when Addition and Multiplication are inherited from Calculation class</li>
+        </ul>
+    </ol>
+    <a href="https://www.educative.io/blog/object-oriented-programming">Resource</a>
+
+
+</div>
+
+
+{% endblock %}
