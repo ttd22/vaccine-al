@@ -1,15 +1,17 @@
+'''Context processors'''
 from os import getenv
 import datetime
 
 def utility_text_processors():
+    '''text processor'''
     message = "hello world"
 
     def deployment_environment():
         return getenv('FLASK_ENV', None)
 
     def current_year():
-        currentDateTime = datetime.datetime.now()
-        date = currentDateTime.date()
+        current_date_time = datetime.datetime.now()
+        date = current_date_time.date()
         year = date.strftime("%Y")
         return year
 
@@ -22,5 +24,3 @@ def utility_text_processors():
         year=current_year(),
         format_price=format_price
     )
-
-

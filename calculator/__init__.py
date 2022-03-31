@@ -55,4 +55,3 @@ class Calculator:
         """ This is the subtract method"""
         calculation = Multiplication.create(tuple_list)
         return calculation.get_result()
-

@@ -42,7 +42,7 @@ from calculator import Calculator
 #     assert calculator.multiply(7) == 0
 
 def tuple_list():
-    # Arrange
+    """Arrange"""
     return 2.0, 3
 
 def test_calculator_add_method():
