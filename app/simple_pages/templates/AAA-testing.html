@@ -1,3 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
-{% endblock content %}
+    <div class="container px-4 py-4" id="featured-3">
+    <center><h1 class="pb-2 border-bottom">AAA Testing (ARRANGE-ACT-ASSERT)</h1></center>
+
+    <h2>Definition</h2>
+    <ul>
+        <li>
+            A test is a procedure that exercises a behavior to determine if the behavior functions correctly. There are several different kinds of tests, like unit tests, integration tests, or end-to-end tests, but all functional tests do the same basic thing: they try something and report PASS or FAIL.
+
+        </li>
+        <li>Arrange-Act-Assert is a great way to structure test cases. It prescribes an order of operations:</li>
+        <ul>
+            <li>
+                <b>Arrange</b> inputs and targets. Arrange steps should set up the test case. Does the test require any objects or special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these operations at the start of the test.
+            </li>
+            <li>
+                <b>Act</b> on the target behavior. Act steps should cover the main thing to be tested. This could be calling a function or method, calling a REST API, or interacting with a web page. Keep actions focused on the target behavior.
+            </li>
+            <li>
+                <b>Assert</b> expected outcomes. Act steps should elicit some sort of response. Assert steps verify the goodness or badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other times, they may require checking multiple facets of a system. Assertions will ultimately determine if the test passes or fails.
+            </li>
+        </ul>
+        <br><center><img src="../../static/images/aaa-testing.png" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+    </ul>
+
+    <h2 class="pb-2 border-top" >Code examples</h2>
+    <br><center><img src="../../static/images/ex-aaa-testing.jpg" loading="lazy" alt="inheritance-1" width="600px"></center><br>
+    <u>Explain code example</u>:
+    <ul>
+        <li>
+            The <i>Arrange</i> step creates a tuple input called tuple_list
+        </li>
+        <li>
+            The <i>Act</i> step calls add() function from class Calculator using tuple_list and store the returned value in a variable name result.
+        </li>
+        <li>
+            The <i>Assert</i> step verifies that "result" equals to 5
+        </li>
+    </ul>
+
+    <h2 class="pb-2 border-top">Why AAA testing is important?</h2>
+    <p>The main benefit of the AAA pattern is a clear separation of what is being tested from the setup and result verification, which makes the code easier to read and understand. Better readability helps identify key aspects of our tests, thus helping improve the review, maintenance and debugging of our tests. So, it could be helpful to separate each step visually</p>
+    <a href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/">Resource</a>
+</div>
+
+
+{% endblock %}
